@@ -1,0 +1,16 @@
+train_file: ['/root/ljm/ALBEF-main/data/pretrain_data.json']
+test_file: "/root/ljm/ALBEF-mask/data/mimic_5x200_test.csv"
+bert_config: 'configs/config_bert.json'
+#image_res: 256
+image_res: 224
+# vision_width: 768
+vision_width: 768
+#embed_dim: 256
+embed_dim: 512
+# batch_size原代码为64
+batch_size: 64
+temp: 0.07
+mlm_probability: 0.15
+alpha: 0.4
+optimizer: {opt: adamW, lr: 1e-4, weight_decay: 0.02}
+schedular: {sched: cosine, lr: 1e-4, epochs: 10, min_lr: 1e-5, decay_rate: 1, warmup_lr:  5e-5, warmup_steps: 30, cooldown_epochs: 0}

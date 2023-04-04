@@ -1,0 +1,23 @@
+test_file: "/root/datasets/mimic/files/mimic-cxr-jpg/2.0.0/mimic_5x200_sentence_-1_frontal.csv"
+bert_config: 'configs/bert.json'
+image_res: 224
+batch_size_train: 64
+batch_size_test: 32
+
+vision_width: 768
+embed_dim: 512
+temp: 0.07
+k_test: 128
+mlm_probability: 0.15
+alpha: 0.4
+distill: False
+warm_up: True
+
+
+optimizer: {opt: adamW, lr: 1e-5, weight_decay: 0.02}
+schedular: {sched: cosine, lr: 1e-5, epochs: 10, min_lr: 1e-6, decay_rate: 1, warmup_lr: 1e-5, warmup_epochs: 1, cooldown_epochs: 0}
+
+
+
+
+
